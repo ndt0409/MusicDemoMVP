@@ -160,9 +160,9 @@ class MyMusicService : Service() {
             setTextViewText(R.id.textArtistPlay, music.artist)
             setImageViewResource(R.id.imageAvatarPlay, R.drawable.icon_music_player)
             if (mediaPlayer.isPlaying) {
-                setImageViewResource(R.id.imagePlay, R.drawable.icon_pause_two)
+                setImageViewResource(R.id.imagePlay, R.drawable.ic_pause)
             } else {
-                setImageViewResource(R.id.imagePlay, R.drawable.icon_play_two)
+                setImageViewResource(R.id.imagePlay, R.drawable.ic_play)
             }
         }
 

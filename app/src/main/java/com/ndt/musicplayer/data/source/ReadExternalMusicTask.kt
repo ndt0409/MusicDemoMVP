@@ -5,7 +5,10 @@ import com.ndt.musicplayer.data.model.Song
 import com.ndt.musicplayer.data.model.OnDataLoadedCallback
 
 
-class ReadExternalMusicTask(private val contentResolverData: ContentResolverData, private val callback: OnDataLoadedCallback<ArrayList<Song>>) : AsyncTask<Void, Void, ArrayList<Song>>() {
+class ReadExternalMusicTask(
+    private val contentResolverData: ContentResolverData,
+    private val callback: OnDataLoadedCallback<ArrayList<Song>>
+) : AsyncTask<Void, Void, ArrayList<Song>>() {
 
     @Deprecated("Deprecated in Java")
     override fun doInBackground(vararg params: Void?): ArrayList<Song> {

@@ -19,8 +19,8 @@ data class Song(
     @SuppressLint("Range")
     constructor(cursor: Cursor) : this(
         cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media._ID)).toInt(),
-        cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.TITLE)),
         cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.ARTIST)),
+        cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.TITLE)),
         cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.DATA)),
         cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.DISPLAY_NAME)),
         cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.DURATION)).toInt(),

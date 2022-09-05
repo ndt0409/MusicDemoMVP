@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/constraintItem"
-    android:background="#FFB39C"
     android:layout_width="match_parent"
+    android:layout_height="80dp"
     android:layout_marginTop="2dp"
-    android:layout_height="80dp">
+    android:background="#FFB39C">
 
     <ImageView
         android:id="@+id/imgAva"
