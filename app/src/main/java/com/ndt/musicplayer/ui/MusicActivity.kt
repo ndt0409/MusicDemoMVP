@@ -62,7 +62,7 @@ class MusicActivity : AppCompatActivity(), MusicContract.View, MyMusicService.Ca
         initData()
         initEvent()
 
-        binding.svMusic.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+        binding.searchMusic.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean = false
 
             override fun onQueryTextChange(newText: String?): Boolean {
@@ -117,6 +117,9 @@ class MusicActivity : AppCompatActivity(), MusicContract.View, MyMusicService.Ca
 
     override fun displayListMusic(musicList: ArrayList<Song>) {
         musicAdapter.upDateAdapter(musicList)
+        songs = musicList.toMutableList()
+        musicAdapter.setSongList(songs)
+        myMusicService.setSongList(songs)
     }
 
     override fun onError() {
@@ -195,7 +198,7 @@ class MusicActivity : AppCompatActivity(), MusicContract.View, MyMusicService.Ca
 
     override fun onClick(v: View) {
         when (v.id) {
-            R.id.imagePlay -> {
+            R.id.image_play -> {
                 if (myMusicService.isPlaying() == 0) {
                     binding.imagePlay.setImageResource(R.drawable.ic_play)
                     myMusicService.pauseSong()
@@ -204,8 +207,8 @@ class MusicActivity : AppCompatActivity(), MusicContract.View, MyMusicService.Ca
                     myMusicService.playSong()
                 }
             }
-            R.id.imagePlayNext -> myMusicService.nextSong()
-            R.id.imagePlayBack -> myMusicService.previousSong()
+            R.id.image_play_next -> myMusicService.nextSong()
+            R.id.image_play_back -> myMusicService.previousSong()
         }
     }
 

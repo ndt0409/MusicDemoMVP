@@ -4,26 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/constraintItem"
     android:layout_width="match_parent"
-    android:layout_height="80dp"
+    android:layout_height="@dimen/height_80dp"
     android:layout_marginTop="2dp"
     android:background="#FFB39C">
 
     <ImageView
-        android:id="@+id/imgAva"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:id="@+id/image_avatar"
+        android:layout_width="@dimen/width_80dp"
+        android:layout_height="@dimen/height_80dp"
         android:padding="16dp"
         android:src="@drawable/musical_note"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="@dimen/width_0dp"
+        android:layout_height="@dimen/height_0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/imgAva"
+        app:layout_constraintStart_toEndOf="@+id/image_avatar"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
@@ -35,9 +35,9 @@
             app:layout_constraintGuide_begin="40dp" />
 
         <TextView
-            android:id="@+id/textItemTitlePlay"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:id="@+id/text_item_title_play"
+            android:layout_width="@dimen/width_0dp"
+            android:layout_height="@dimen/height_0dp"
             android:gravity="left|center"
             android:maxLines="1"
             android:text="@string/name_music"
@@ -48,11 +48,11 @@
             tools:ignore="RtlHardcoded" />
 
         <TextView
-            android:id="@+id/textItemArtistPlay"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:id="@+id/text_item_artist_play"
+            android:layout_width="@dimen/width_0dp"
+            android:layout_height="@dimen/height_0dp"
             android:text="@string/name_sing"
-            android:textSize="14sp"
+            android:textSize="@dimen/name_artist"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

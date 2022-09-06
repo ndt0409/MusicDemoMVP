@@ -64,7 +64,7 @@ class MusicAdapter(
 
                 Glide.with(context)
                     .load((music.uri))
-                    .placeholder(R.drawable.icon_music_player).into(binding.imgAva)
+                    .placeholder(R.drawable.icon_music_player).into(binding.imageAvatar)
 
                 binding.constraintItem.setOnClickListener {
                     onItemClickListener.loadMusic(musics as ArrayList<Song>, position)

@@ -25,6 +25,7 @@ class MyMusicService : Service() {
     private val ibinder = PlayMusicBinder()
     private val mediaPlayer: MediaPlayer = MediaPlayer()
     private lateinit var music: Song
+    private var songList: MutableList<Song>? = null
     private lateinit var musicArrayList: ArrayList<Song>
     private lateinit var callBack: CallBack
 
@@ -53,6 +54,10 @@ class MyMusicService : Service() {
 
     fun onProgress(i: Int) {
         mediaPlayer.seekTo(i * music.duration / 100)
+    }
+
+    fun setSongList(songList: MutableList<Song>) {
+        this.songList = songList
     }
 
     fun chooseMusic(context: Context, musics: ArrayList<Song>, position: Int) {
@@ -156,13 +161,13 @@ class MyMusicService : Service() {
     ): Notification {
         val notificationLayout = RemoteViews(packageName, R.layout.nofication_music)
         notificationLayout.run {
-            setTextViewText(R.id.textTitlePlay, music.title)
-            setTextViewText(R.id.textArtistPlay, music.artist)
-            setImageViewResource(R.id.imageAvatarPlay, R.drawable.icon_music_player)
+            setTextViewText(R.id.text_title_play, music.title)
+            setTextViewText(R.id.text_artist_play, music.artist)
+            setImageViewResource(R.id.image_avatar_play, R.drawable.icon_music_player)
             if (mediaPlayer.isPlaying) {
-                setImageViewResource(R.id.imagePlay, R.drawable.ic_pause)
+                setImageViewResource(R.id.image_play, R.drawable.ic_pause)
             } else {
-                setImageViewResource(R.id.imagePlay, R.drawable.ic_play)
+                setImageViewResource(R.id.image_play, R.drawable.ic_play)
             }
         }
 
@@ -179,9 +184,9 @@ class MyMusicService : Service() {
         val prePendingIntent = PendingIntent.getService(this, 0, preIntentNotification, 0)
 
         notificationLayout.run {
-            setOnClickPendingIntent(R.id.imagePlay, playPendingIntent)
-            setOnClickPendingIntent(R.id.imagePlayNext, nextPendingIntent)
-            setOnClickPendingIntent(R.id.imagePlayBack, prePendingIntent)
+            setOnClickPendingIntent(R.id.image_play, playPendingIntent)
+            setOnClickPendingIntent(R.id.image_play_next, nextPendingIntent)
+            setOnClickPendingIntent(R.id.image_play_back, prePendingIntent)
         }
         return NotificationCompat.Builder(this, Constant.CHANNEL_ID)
             .setSmallIcon(R.drawable.icon_music_player)

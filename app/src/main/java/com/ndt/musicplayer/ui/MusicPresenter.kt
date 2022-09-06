@@ -16,6 +16,7 @@ class MusicPresenter(
         musicRepository.getMusics(object : OnDataLoadedCallback<ArrayList<Song>> {
             override fun onDataLoaded(data: ArrayList<Song>) {
                 musicActivity.displayListMusic(data)
+
             }
 
             override fun onDataNotAvailable(exception: Exception) {

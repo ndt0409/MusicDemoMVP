@@ -10,5 +10,4 @@ object Constant {
     const val CHANNEL_NAME = "com.ndt.music.CHANNEL_NAME"
     const val CHANNEL_DESCRIPTION = "com.ndt.music.CHANNEL_DESCRIPTION"
     const val ID = 1
-    const val CHANNEL_NOTIFICATION = "com.ndt.music.CHANNEL_NOTIFICATION"
 }
